@@ -20,17 +20,22 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link className="fw-bold" as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link className="fw-bold" as={Link} to="/services">Services</Nav.Link>
-                            <Nav.Link className="fw-bold" as={Link} to="/checkout">CheckOut</Nav.Link>
+                            <Nav.Link className="fw-bold">
+                                {
+                                    user? <Link style={{textDecoration: 'none', color: 'grey'}} to="/checkout">CheckOut</Link>:
+                                    <Link style={{textDecoration: 'none', color: 'grey'}} className="fw-bold" to="/login">CheckOut</Link>
+                                }
+                            </Nav.Link>
                             <Nav.Link className="fw-bold" as={Link} to="/blogs">Blogs</Nav.Link>
                             <Nav.Link className="fw-bold" as={Link} to="/about">About</Nav.Link>
                         </Nav>
 
                         <Nav>
                             {
-                                user? 
-                                <Nav.Link className="fw-bold" onClick={handleSignOut}>Sign Out</Nav.Link> : <Nav.Link className="fw-bold" as={Link} to="/login">Login</Nav.Link>
+                                user ?
+                                    <Nav.Link className="fw-bold" onClick={handleSignOut}>Sign Out</Nav.Link> : <Nav.Link className="fw-bold" as={Link} to="/login">Login</Nav.Link>
                             }
-                            
+
                             <Nav.Link className="fw-bold" as={Link} to="/register" style={{
                                 backgroundColor: "#5DA3FA",
                                 borderRadius: "30px"

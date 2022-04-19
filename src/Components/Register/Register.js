@@ -50,7 +50,7 @@ const Register = () => {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
                     <Button style={{ backgroundColor: "#207398" }} type="submit">
-                        Submit
+                        Register
                     </Button>
                 </Form>
                 <p>Already have an account? <span className="text-danger" onClick={navigateLogin} style={{ cursor: "pointer" }}>Please Login!</span></p>

@@ -1,20 +1,23 @@
 [
-    {
-      "id": 1,
-      "name": "Tom Hanks",
-      "photo": "asiuhdua",
-      "price": 4.9
-    },
-    {
-      "id": 2,
-      "name": "Tom Hardy",
-      "photo": "asiuhdua",
-      "price": 4.9
-    },
-    {
-      "id": 3,
-      "name": "Dwayne Rock Johnson",
-      "photo": "asiuhdua",
-      "price": 4.9
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Astrography",
+    "photo": "https://i.ibb.co/hCY71p9/IMG-3209.jpg",
+    "details": "Just starting out in night sky photography? Our beginners guide to astrophotography covers everything from kit to shooting modes to locations and more.",
+    "price": 120
+  },
+  {
+    "id": 2,
+    "name": "Artistic",
+    "photo": "https://i.ibb.co/r5KpFbC/IMG-9317.jpg",
+    "details": "Fine-art photography is photography created in line with the vision of the photographer as artist, using photography as a medium for creative expression.",
+    "price": 110
+  },
+  {
+    "id": 3,
+    "name": "Aesthetic",
+    "photo": "https://i.ibb.co/pPsdSK5/IMG-9400.jpg",
+    "details": "The concept of aesthetics is central to photography. Here is what you need to know about this is, why this concept matters, and how you can use it to take better pictures!",
+    "price": 120
+  }
+]

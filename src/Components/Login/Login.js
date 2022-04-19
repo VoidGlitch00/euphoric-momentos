@@ -37,7 +37,7 @@ const Login = () => {
                 console.log(res.user);
             })
             .catch(err => {
-
+                return err.error;
             })
     }
 
@@ -64,7 +64,7 @@ const Login = () => {
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
                     <Button className="mx-3" style={{ backgroundColor: "#207398" }} type="submit">
-                        Submit
+                        Log In
                     </Button>
                     <Button style={{ backgroundColor: "#207398" }} type="submit" onClick={handleSignInGoogle}>
                         Google Sign In
