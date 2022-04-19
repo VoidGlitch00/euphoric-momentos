@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className="container mt-3 mb-5">
+        <div className="container mt-3 mb-5" style={{ minHeight: "100vh", backgroundColor: "#EBF5FB" }}>
             <h3>What is the Difference between authorization and authentication?</h3>
             <p>-Authentication is the act of confirming a person's identity, whereas authorisation is the process of confirming a user's access to certain apps, files, and data. The scenario is similar to that of an airline deciding which passengers are allowed to board. The first stage is to verify a passenger's identification to ensure that they are who they claim they are. After confirming a customer's identification, the next stage is to confirm any unique services the passenger has access to, such as flying first-class or entering the VIP lounge.</p>
             <h3>Why are you using firebase? What other options do you have to implement authentication?</h3>

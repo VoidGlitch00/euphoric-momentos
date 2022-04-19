@@ -1,10 +1,11 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import NewsLetter from '../NewsLetter/NewsLetter';
 import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <div>
+        <div style={{ minHeight: "100vh", backgroundColor: "#EBF5FB" }}>
             <Carousel fade>
                 <Carousel.Item>
                     <img
@@ -13,8 +14,7 @@ const Home = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>Twilight</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -25,8 +25,7 @@ const Home = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>B&W</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -37,12 +36,12 @@ const Home = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>Mirrored</h3>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
             <Services></Services>
+            <NewsLetter></NewsLetter>
         </div>
     );
 };

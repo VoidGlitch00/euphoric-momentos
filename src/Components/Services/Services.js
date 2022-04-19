@@ -15,9 +15,7 @@ const Services = (props) => {
             .then(data => setService(data))
     }, []);
     return (
-        <div className="container mt-5" style={{
-            minHeight: "100vh",
-        }}>
+        <div className="container mt-5" style={{ minHeight: "100vh", backgroundColor: "#EBF5FB" }}>
             <h1>Services</h1>
 
             <div className="container mx-auto d-flex justify-content-evenly mt-5 ">
