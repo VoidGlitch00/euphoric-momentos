@@ -1,16 +1,24 @@
 import React, { useRef } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { auth } from '../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 const Register = () => {
-    const emailRef = useRef("");
-    const passwordRef = useRef("");
+    const [
+        CreateUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const email = emailRef.current.value;
-        const password = passwordRef.current.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        CreateUserWithEmailAndPassword(email, password);
     }
 
     const navigateLogin = event => {
@@ -24,11 +32,11 @@ const Register = () => {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Your Name</Form.Label>
-                        <Form.Control ref={emailRef} type="text" placeholder="Enter your name" required />
+                        <Form.Control name="text" type="text" placeholder="Enter your name" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
-                        <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
+                        <Form.Control name="email" type="email" placeholder="Enter email" required />
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
@@ -36,7 +44,7 @@ const Register = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
+                        <Form.Control name="password" type="password" placeholder="Password" required />
                     </Form.Group>
                     <Form.Group className="mb-3 text-start" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
