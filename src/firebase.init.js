@@ -7,12 +7,12 @@ import { getAuth } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDghJHiG2yzG5JqsNspWOuasgyTD695Dro",
-  authDomain: "euphoric-momentos-d3016.firebaseapp.com",
-  projectId: "euphoric-momentos-d3016",
-  storageBucket: "euphoric-momentos-d3016.appspot.com",
-  messagingSenderId: "46722573520",
-  appId: "1:46722573520:web:a1ef99056fca07effa2ad5"
+  apiKey:process.env.REACT_APP_apiKey, 
+  authDomain:process.env.REACT_APP_authDomain, 
+  projectId:process.env.REACT_APP_projectId, 
+  storageBucket:process.env.REACT_APP_storageBucket, 
+  messagingSenderId:process.env.REACT_APP_messagingSenderId, 
+  appId:process.env.REACT_APP_appId, 
 };
 
 // Initialize Firebase
