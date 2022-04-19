@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase.init';
@@ -10,11 +10,19 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const navigate = useNavigate();
+    const [validated, setValidated] = useState(false);
 
     const handleSubmit = (event) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        setValidated(true);
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
@@ -29,7 +37,7 @@ const Register = () => {
         <div>
             <Container className="mt-5 mb-5 w-50">
                 <h2 style={{ color: '#383CC1' }}>Please Register</h2>
-                <Form onSubmit={handleSubmit}>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Your Name</Form.Label>
                         <Form.Control name="text" type="text" placeholder="Enter your name" required />
@@ -37,6 +45,9 @@ const Register = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control name="email" type="email" placeholder="Enter email" required />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid email.
+                        </Form.Control.Feedback>
                         <Form.Text className="text-muted">
                             We'll never share your email with anyone else.
                         </Form.Text>
@@ -45,6 +56,9 @@ const Register = () => {
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control name="password" type="password" placeholder="Password" required />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid password.
+                        </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group className="mb-3 text-start" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
