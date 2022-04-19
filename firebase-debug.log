@@ -1,0 +1,13 @@
+[debug] [2022-04-19T17:48:37.662Z] ----------------------------------------------------------------------
+[debug] [2022-04-19T17:48:37.665Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Lenovo\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-04-19T17:48:37.667Z] CLI Version:   10.6.0
+[debug] [2022-04-19T17:48:37.667Z] Platform:      win32
+[debug] [2022-04-19T17:48:37.667Z] Node Version:  v16.13.1
+[debug] [2022-04-19T17:48:37.668Z] Time:          Tue Apr 19 2022 23:48:37 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-04-19T17:48:37.668Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-19T17:48:37.733Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-19T17:48:37.733Z] > authorizing via signed-in user (shawonsk09@gmail.com)
+[debug] [2022-04-19T17:48:37.733Z] [iam] checking project euphoric-momentos-d3016 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-19T17:48:37.735Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/euphoric-momentos-d3016:testIamPermissions [none]
+[debug] [2022-04-19T17:48:37.736Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/euphoric-momentos-d3016:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
